@@ -6,13 +6,9 @@
     <title>Recipe Finder</title>
 
     <!-- Favicon -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/images/favicon.png"
-    />
+    
     <!-- Remix icons -->
+    <link rel="shortcut icon" href="#">
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -22,11 +18,28 @@
   <body>
     <main>
       <section class="left-section-wrapper">
-        <header>
+        <header >
           <h1>Recipes</h1>
-          <input type="text" name="" id="searchInput" placeholder="Search recipes" />
+          <div class="searchBoxContainer-wrapper">
+            <div class="searchInputBox">
+              <a href="#" >
+                <input type="text" name="" id="searchInput" placeholder="Search recipes" data-search />
+                
+              </a>
+
+              <div class="user-container" data-user-recipe-container></div>
+                
+                <template data-user-template>
+                  <a href="#" id="linkTag">
+                    <div class="autocomplete-container">
+                      <div class="recipe_header" data-header></div>
+                      <img src="#" alt="" class="recipe_img" data-img>
+                    </div>
+                  </a>
+                </template>
+            </div>
+          </div>
           <button class="searchBtn">Find</button>
-          
         </header>
 
         <div class="main-course-text">
@@ -164,6 +177,6 @@
       </section>
     </main>
 
-    <script src="index.js"></script>
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
