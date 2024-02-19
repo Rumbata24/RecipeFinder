@@ -61,6 +61,11 @@ input {
   border-radius: 0.6rem;
 }
 
+img {
+  width: 100%;
+  height: 100%;
+}
+
 ::placeholder {
   color: #32394c;
   opacity: 1; /* Firefox */
@@ -94,39 +99,54 @@ header h1 {
   font-weight: 500;
 }
 
-.searchBoxContainer-wrapper {
-  max-width: 450px;
-}
-
-.searchBoxContainer-wrapper .searchInputBox {
-  position: relative;
-  width: 100%;
-}
-
-.searchBoxContainer-wrapper input {
+.searchInputBox a input {
   background-color: rgba(80, 86, 103, 0.8);
   border: none;
   outline: none;
   font-weight: 600;
   padding: 1rem 2.5rem;
-  width: 100%;
+
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
-.autocomplete-container{
+.searchInputBox {
+  position: relative;
+}
+
+.user-container {
+  margin-block: 1rem;
+  width: 100%;
+  position: absolute;
+}
+
+.autocomplete-container {
   margin-top: 5px;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  height: 100px;
   background-color: rgba(80, 86, 103, 0.8);
   border-radius: 8px;
+  gap: 1rem;
+
+  /* position: absolute; */
+  /* z-index: 999;
+  top: calc(100% + 5px); */
 }
 
-.autocomplete-container img{
+.active {
+  display: block;
+}
+
+.autocomplete-container .recipe_header {
+  font-size: var(--font-size-sm);
+  /* max-width: 200px; */
+}
+
+.autocomplete-container img {
   width: 75px;
   height: 75px;
+  border-radius: 12px;
 }
 
 header button {
@@ -139,11 +159,11 @@ header button {
   display: none;
 }
 
-.closed{
-  display:  none;
+.closed {
+  display: none;
 }
 
-.open{
+.open {
   display: block;
 }
 
@@ -157,6 +177,24 @@ header button {
 
 .searchBtn:hover {
   background: #fcb961;
+}
+
+.main-course-text {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+}
+
+.main-course-text .image-container {
+  max-width: 300px;
+  max-height: 300px;
+  /* border-radius: 20px; */
+}
+
+.main-course-text .image-container img {
+  border-radius: 15px;
 }
 
 .main-course-text h5 {
@@ -185,29 +223,27 @@ header button {
   margin-left: 1.5rem;
 }
 
-.how-to-prepare h3 {
+.ingredients h3 {
   font-size: var(--font-size-md);
   font-weight: 500;
   margin-block: 3rem;
 }
 
-.how-to-prepare p {
-  margin-block: 2rem;
+.ingredients p {
   font-size: var(--font-size-sm);
+  margin-top: 1.5rem;
 }
 
-/* .how-to-prepare span{
-    transform: rotate(-90deg);
-    color: var(--button-color);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    
-} */
-
-.steps {
+.ingredient-template {
   display: flex;
   align-items: center;
-  justify-content: center;
+
+  margin-top: 1.5rem;
+}
+
+.ingredient-template label {
+  color: #fff;
+  font-size: var(--font-size-sm);
 }
 
 .steps span {
@@ -221,6 +257,19 @@ header button {
 .steps-container {
   max-height: var(--item-min-height-sm);
   overflow-y: scroll;
+}
+
+.info-div span {
+  color: black;
+  opacity: 0.7;
+}
+
+strong {
+  color: #333;
+}
+
+.info-div p {
+  margin-block: 1.5rem;
 }
 
 /* custom scrollbar */
@@ -256,7 +305,8 @@ header button {
 .right-section-wrapper button,
 .right-section-wrapper ul li label,
 .right-section-wrapper i,
-.right-section-wrapper p {
+.right-section-wrapper p,
+.right-section-wrapper span {
   color: black;
   font-size: var(--font-size-md);
 }
@@ -277,13 +327,6 @@ header button {
   opacity: 0.7;
   font-size: var(--font-size-lg);
   margin-right: 2rem;
-}
-
-.right-section-wrapper div label {
-  margin: 1.5rem;
-
-  display: flex;
-  align-items: center;
 }
 
 input[type="checkbox"] {
@@ -358,10 +401,6 @@ input[type="checkbox"]:hover {
     padding: 3rem; /* Decrease padding for smaller screens */
   }
 
-  .how-to-prepare {
-    margin-top: 3rem; /* Add space between sections */
-  }
-
   .steps-container {
     max-height: none; /* Remove max height for smaller screens */
   }
@@ -372,7 +411,7 @@ input[type="checkbox"]:hover {
 
   .steps span {
     transform: rotate(0);
-    align-self: flex-start;
+    /* align-self: flex-start; */
   }
 
   header {
@@ -386,5 +425,17 @@ input[type="checkbox"]:hover {
 
   input[type="text"] {
     width: 100%; /* Full width input */
+  }
+
+  .main-course-text {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .main-course-text .image-container {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 20px;
   }
 }

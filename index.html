@@ -6,9 +6,9 @@
     <title>Recipe Finder</title>
 
     <!-- Favicon -->
-    
+
     <!-- Remix icons -->
-    <link rel="shortcut icon" href="#">
+    <link rel="shortcut icon" href="#" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -18,162 +18,102 @@
   <body>
     <main>
       <section class="left-section-wrapper">
-        <header >
-          <h1>Recipes</h1>
+        <header>
+          <a href="./index.html"><h1>Recipes</h1></a>
           <div class="searchBoxContainer-wrapper">
             <div class="searchInputBox">
-              <a href="#" >
-                <input type="text" name="" id="searchInput" placeholder="Search recipes" data-search />
-                
+              <a href="#">
+                <input
+                  type="text"
+                  name=""
+                  id="searchInput"
+                  placeholder="Search recipes"
+                  data-search
+                />
               </a>
+              <div
+                class="user-container active"
+                data-user-recipe-container
+              ></div>
 
-              <div class="user-container" data-user-recipe-container></div>
-                
-                <template data-user-template>
-                  <a href="#" id="linkTag">
-                    <div class="autocomplete-container">
-                      <div class="recipe_header" data-header></div>
-                      <img src="#" alt="" class="recipe_img" data-img>
-                    </div>
-                  </a>
-                </template>
+              <template data-user-template>
+                <a href="#" class="autocomplete-link">
+                  <div class="autocomplete-container">
+                    <div class="recipe_header" data-header></div>
+                    <img src="#" alt="" class="recipe_img" data-img />
+                  </div>
+                </a>
+              </template>
             </div>
           </div>
+
           <button class="searchBtn">Find</button>
         </header>
 
         <div class="main-course-text">
-          <h5>Main Course</h5>
-          <h1 class="recipeTitle">Fillet Steak with Roasted Vegetables</h1>
+          <div>
+            <h5 class="course" data-dishType>Main Course</h5>
+            <h1 class="recipeTitle">Fillet Steak with Roasted Vegetables</h1>
+            <p>⭐⭐⭐⭐⭐ <span>5 out of 5</span></p>
+          </div>
 
-          <p>⭐⭐⭐⭐⭐ <span>5 out of 5</span></p>
+          <div class="image-container">
+            <img class="change_img" src="./images/steak-img.jpg" alt="" />
+          </div>
         </div>
 
-        <div class="how-to-prepare">
-          <h3>Method</h3>
-          <div class="steps-container">
-            <div class="steps">
-              <span>Step1</span>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-                harum earum nesciunt, voluptas autem dolor corrupti quo
-                voluptatem fugit cupiditate, dolores unde officia facere culpa
-                velit pariatur reprehenderit commodi debitis.
-              </p>
+        <div class="ingredients">
+          <h3>Grocery list</h3>
+
+          <div
+            class="data-ingredient-container"
+            data-ingredient-container
+          ></div>
+
+          <template data-ingredients-template>
+            <div class="ingredient-template">
+              <input type="checkbox" name="item" value="1" />
+              <label for="checkbox" data-checkbox> </label>
             </div>
-  
-            <div class="steps">
-              <span>Step2</span>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-                harum earum nesciunt, voluptas autem dolor corrupti quo
-                voluptatem fugit cupiditate, dolores unde officia facere culpa
-                velit pariatur reprehenderit commodi debitis.
-              </p>
-            </div>
-  
-            <div class="steps">
-              <span>Step3</span>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-                harum earum nesciunt, voluptas autem dolor corrupti quo
-                voluptatem fugit cupiditate, dolores unde officia facere culpa
-                velit pariatur reprehenderit commodi debitis.
-              </p>
-            </div>
-  
-            <div class="steps">
-              <span>Step4</span>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-                harum earum nesciunt, voluptas autem dolor corrupti quo
-                voluptatem fugit cupiditate, dolores unde officia facere culpa
-                velit pariatur reprehenderit commodi debitis.
-              </p>
-            </div>
-  
-            <div class="steps">
-              <span>Step5</span>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-                harum earum nesciunt, voluptas autem dolor corrupti quo
-                voluptatem fugit cupiditate, dolores unde officia facere culpa
-                velit pariatur reprehenderit commodi debitis.
-              </p>
-            </div>
-          </div>
+          </template>
+
+          <p>
+            Do you have everything?
+            <a class="recipe_uri" href="#">Check the recipe here.</a>
+          </p>
         </div>
       </section>
 
-      
-
       <section class="right-section-wrapper">
-        <div class="stats">
-          <div>
-            <i class="ri-time-line"></i>
-          <p>20 minutes</p>
-          </div>
-          <div><i class="ri-flashlight-line"></i>
-            <p> 640 calories</p></div>
+        <h3>Info</h3>
+        <div class="stats-container" data-stats-container></div>
+
+        <template data-stats-template>
+          <div class="stats" data-stats>
             <div>
-                <i class="ri-award-line"></i>
-          <p></i> Begginer</p>
+              <i class="ri-flashlight-line" data-icon-calorie></i>
+              <p data-calorie>624 calories</p>
             </div>
-          
-        </div>
-
-        <div>
-          <h3>Ingredients</h3>
-          <ul>
-            <li>
-              <label for="checkbox"
-                ><input type="checkbox" name="item" value="1" /> 2 fillet
-                seaks</label>
-            </li>
-
-            <li>
-              <label for="checkbox"
-                ><input type="checkbox" name="item" value="1" /> 2 fillet
-                seaks</label
+          </div>
+          <div class="info-div">
+            <p data-meal-type>
+              <strong>Meal type:</strong> <span>lunch/dinner</span>
+            </p>
+            <p data-cuisineType>
+              <strong>Cuisine Type:</strong> <span>american</span>
+            </p>
+            <p data-healthLabels>
+              <strong>Health Labels:</strong>
+              <span
+                >Dairy-Free, Egg-Free, Peanut-Free, Tree-Nut-Free,
+                Shellfish-Free, Mustard-Free, Sesame-Free, Lupine-Free</span
               >
-            </li>
-
-            <li>
-              <label for="checkbox"
-                ><input type="checkbox" name="item" value="1" /> 2 fillet
-                seaks</label
-              >
-            </li>
-
-            <li>
-              <label for="checkbox"
-                ><input type="checkbox" name="item" value="1" /> 2 fillet
-                seaks</label
-              >
-            </li>
-
-            <li>
-              <label for="checkbox"
-                ><input type="checkbox" name="item" value="1" /> 2 fillet
-                seaks</label
-              >
-            </li>
-
-            <li>
-              <label for="checkbox"
-                ><input type="checkbox" name="item" value="1" /> 2 fillet
-                seaks</label
-              >
-            </li>
-
-            <li>
-              <label for="checkbox"
-                ><input type="checkbox" name="item" value="1" /> 2 fillet
-                seaks</label
-              >
-            </li>
-          </ul>
-        </div>
+            </p>
+            <p data-dietLabels>
+              <strong>Diet Labels:</strong> <span>High-Fiber, Low-Carb</span>
+            </p>
+          </div>
+        </template>
       </section>
     </main>
 
